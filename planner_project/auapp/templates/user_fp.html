@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Reset Password {% endblock %}
+
+{% block content %}
+	<br>
+	<h1 style="color:black; font-size:45px;"> Reset Password </h1>
+	<form method="POST">
+	{% csrf_token %}
+		<label style="font-size:30px;" > Username: </label> 
+		<input type="text" style="border-radius: 30px; font-size:25px;" name="un" placeholder="Enter registered username" required>
+		<br><br>&nbsp;&nbsp;&nbsp;
+		<label style="font-size:30px;" > Email: </label>&nbsp;&nbsp;
+		<input type="email" style="border-radius: 30px; font-size:25px;" name="em" placeholder="Enter registered email id" required>
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="btn btn-outline-primary" style="font-size:20px;" value="Reset Password">
+		<br>
+	</form>
+	<p style="color:red; font-size:30px;"> {{ msg }} </p>
+{% endblock %}

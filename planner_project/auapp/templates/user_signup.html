@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+	<br>
+	<h1 style="color:black; font-size:45px;"> Register Here! </h1>
+	<form method="POST">
+	{% csrf_token %}
+		<label style="font-size:30px;" > Username: </label> 
+		<input type="text" style="border-radius: 30px; font-size:25px;" name="un" placeholder="  Enter username" required>
+		<br><br>&nbsp;&nbsp;&nbsp;
+		<label style="font-size:30px;" > Email: </label>&nbsp;
+		<input type="email" style="border-radius: 30px; font-size:25px;" name="em" placeholder="  Enter email address" required>
+		<br><br>&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="btn btn-outline-primary" style="font-size:20px;"  value="Sign Up">
+		<br><br>
+		<label style="color:black;font-size:20px;">
+			Already have an account? 
+			<a href="{% url 'user_login' %}" style="font-size:20px;" > Login here </a>
+		</label>
+	</form>
+	<p style="color:red; font-size:30px;"> {{ msg }} </p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+	<br>
+	<h1 style="color:black; font-size:45px;"> Login Here! </h1>
+	<form method="POST">
+	{% csrf_token %}
+		<label style="font-size:30px;" > Username: </label> 
+		<input type="text" style="border-radius: 30px; font-size:25px;" name="un" placeholder="  Enter username" required>
+		<br><br>
+		<label style="font-size:30px;" > Password: </label>
+		<input type="password" style="border-radius: 30px; font-size:25px;" name="pw" placeholder="  Enter password" required>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label style="font-size:15px;" > (For registered users, Password is emailed at the time of sign-up!) </label> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;
+		<input type="submit" class="btn btn-outline-primary"  style="font-size:20px;" value="Login">
+		<br><br>
+		<label style="color:black;font-size:20px;">
+			Forgot Password? 
+			<a href="{% url 'user_fp' %}" style="font-size:20px;" > Click here </a>
+		</label><br>
+		<label style="color:black;font-size:20px;">
+			Don't have an account? 
+			<a href="{% url 'user_signup' %}" style="font-size:20px;" > SignUp here </a>
+		</label>
+	</form>
+	<p style="color:red; font-size:30px;"> {{ msg }} </p>
+{% endblock %}

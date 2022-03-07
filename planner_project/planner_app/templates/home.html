@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Planner {% endblock %}
+
+{% block content %}
+	<a href="{% url 'user_login' %}">
+		<img alt="Planner" src = "{% static 'images/planner.jpg' %}" width=100% height="650">
+	</a>
+{% endblock %}
