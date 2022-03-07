@@ -7,3 +7,5 @@ Go to: planner_project/planner_project/settings.py
     
     EMAIL_HOST_USER=""  
     EMAIL_HOST_PASSWORD=""  
+
+Live Demo: https://planner.pythonanywhere.com/  
